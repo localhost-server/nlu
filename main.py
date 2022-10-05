@@ -1,4 +1,15 @@
 import os
+
+if os.path.exists("build"):
+    pass
+else:
+    os.system("python setup.py build")
+
+if os.path.exists("dist"):
+    pass
+else:
+    os.system("python setup.py install")
+
 import streamlit as st
 
 def layout():
