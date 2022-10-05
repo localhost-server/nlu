@@ -1,21 +1,20 @@
 import os
-
 if os.path.exists("build"):
     pass
 else:
     os.system("python setup.py build")
-
-if os.path.exists("dist"):
-    pass
-else:
-    os.system("python setup.py install")
+    if os.path.exists("dist"):
+        pass
+    else:
+        os.system("python setup.py install")
 
 import streamlit as st
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
 
+tabs=["Dashboard","NER","Text-Similarity-Matrix","Dependency-Tree","Classifiers","Token-Features","Token-Embedding-Manifolds","Sentence-Embedding-Manifolds","Entity-Embedding-Manifolds"]
 def layout():
     # with st.form("Home"):
-    dashbrd ,NER, txtsmlrtymtrx, dpndnctree, clsifrs, tknfetrs, tknembd, sntnsembd, enttembd = st.tabs(
-        ["Dashboard","NER","Text-Similarity-Matrix","Dependency-Tree","Classifiers","Token-Features","Token-Embedding-Manifolds","Sentence-Embedding-Manifolds","Entity-Embedding-Manifolds"])
+    dashbrd ,NER, txtsmlrtymtrx, dpndnctree, clsifrs, tknfetrs, tknembd, sntnsembd, enttembd = st.tabs(tabs)
     
     if dashbrd:
         with dashbrd:
