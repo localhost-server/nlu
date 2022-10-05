@@ -1,1 +1,4 @@
-pip install nlu pyspark 
+nlu
+pyspark
+sklearn
+plotly
